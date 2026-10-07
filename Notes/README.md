@@ -44,6 +44,7 @@ flowchart LR
 * **[Repository Root Hub (`README.md`)](../README.md)**
 * **[Elevate Exam Study Guide & Master Cram Sheet](../docs/STUDY_GUIDE.md)**
 * **[55-Question Practice Knowledge Check](../docs/PRACTICE_EXAM_50Q.md)**
+* **[Mock Assessment Review — Q12–Q30 (Grounded Answer Key)](../docs/MOCK_ASSESSMENT_Q12_Q30.md)**
 * **[Master 5-Day Technical Synthesis](../docs/MASTER_SYNTHESIS.md)**
 * **[Google Cloud CE & DBCE Decision Playbook](../docs/CE_PLAYBOOK.md)**
 * **[CLI & Python SDK Quick-Reference Cheat Sheet](../docs/CLI_AND_SDK_CHEATSHEET.md)**

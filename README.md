@@ -37,6 +37,7 @@ flowchart LR
 | :--- | :--- | :---: |
 | **Elevate Exam Study Guide & Master Cram Sheet** | High-density exam preparation guide featuring the Master Quantitative Metrics, Thresholds, Formulas & SLAs Table, Top 25 Exam Trap Distractors vs. Ground Truth, and Day 1–5 Architecture Comparison Matrices. | [docs/STUDY_GUIDE.md](docs/STUDY_GUIDE.md) |
 | **55-Question Practice Knowledge Check** | Full-length 55-question self-test practice exam across Days 1–5 with a 30-second Quick Scoring Grid and detailed answer rationales linked to source curriculum notes. | [docs/PRACTICE_EXAM_50Q.md](docs/PRACTICE_EXAM_50Q.md) |
+| **Mock Assessment Review (Q12–Q30)** | 19 questions from a mock assessment run, each answer verified against official Google documentation (2026-10-07) with verbatim source quotes, a curriculum gap map, and the outdated repository facts it corrected. | [docs/MOCK_ASSESSMENT_Q12_Q30.md](docs/MOCK_ASSESSMENT_Q12_Q30.md) |
 | **Master 5-Day Technical Synthesis** | End-to-end architectural synthesis distilling all 5 days into a single cohesive engineering guide with direct links to underlying session notes. | [docs/MASTER_SYNTHESIS.md](docs/MASTER_SYNTHESIS.md) |
 | **Google Cloud CE & DBCE Decision Playbook** | Field decision matrices for customer architectures: multi-agent sizing, Text-to-SQL with OKF + MCP Toolbox for Databases, Vector DB selection (Vertex AI ScaNN vs. BigQuery vs. AlloyDB/Spanner), Mainframe/.NET/Oracle modernization, WIF+SCIM vs. Cloud Identity, 4-Layer MCP security, and Vertex AI FinOps. | [docs/CE_PLAYBOOK.md](docs/CE_PLAYBOOK.md) |
 | **CLI & Python SDK Cheat Sheet** | Copy-paste command and code recipes for `agents-cli`, `adk`, `gcloud iam policies`, `gcloud model-armor`, CodeMender (`cm`), `google.adk`, and `google.genai` Explicit Context Caching. | [docs/CLI_AND_SDK_CHEATSHEET.md](docs/CLI_AND_SDK_CHEATSHEET.md) |
@@ -86,6 +87,7 @@ elevate/
 ├── docs/
 │   ├── STUDY_GUIDE.md                             # Exam study guide, metrics/formulas table & cram matrices
 │   ├── PRACTICE_EXAM_50Q.md                       # 55-question self-test knowledge check & answer key
+│   ├── MOCK_ASSESSMENT_Q12_Q30.md                 # Grounded answer key for mock assessment Q12–Q30
 │   ├── MASTER_SYNTHESIS.md                        # Comprehensive 5-day technical synthesis
 │   ├── CE_PLAYBOOK.md                             # Google Cloud CE & DBCE architecture decision matrices
 │   └── CLI_AND_SDK_CHEATSHEET.md                  # Consolidated CLI & Python SDK reference recipes

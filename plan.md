@@ -11,7 +11,7 @@
 ## Cross-curriculum docs & tooling
 - [x] Study guide, 55-question practice exam, master synthesis, CE playbook, CLI/SDK cheat sheet
 - [x] AGENTS.md, workspace skill, and `scripts/verify_repo.py` verification gate
-- [ ] Mock assessment review (Q12–Q30) with officially grounded answer key
+- [x] Mock assessment review (Q12–Q30) with officially grounded answer key
 
 ## Curriculum gaps exposed by the mock assessment
 - [ ] Model Armor: document screening file types, always-on CSAM filter, multi-cloud reach

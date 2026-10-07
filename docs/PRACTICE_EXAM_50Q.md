@@ -2,6 +2,7 @@
 
 > **Companion Resources**:
 > - [Elevate Exam Study Guide & Cram Sheet](STUDY_GUIDE.md)
+> - [Mock Assessment Review — Q12–Q30 (Grounded Answer Key)](MOCK_ASSESSMENT_Q12_Q30.md)
 > - [Master Technical Synthesis](MASTER_SYNTHESIS.md)
 > - [CE & DBCE Architecture Decision Playbook](CE_PLAYBOOK.md)
 > - [CLI & Python SDK Quick-Reference Cheat Sheet](CLI_AND_SDK_CHEATSHEET.md)

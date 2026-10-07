@@ -4,6 +4,7 @@
 
 **Quick Navigation**:
 - 📝 **[55-Question Practice Knowledge Check](PRACTICE_EXAM_50Q.md)** *(Self-Test Exam + Quick Scoring Grid + Detailed Rationales)*
+- 🔎 **[Mock Assessment Review — Q12–Q30](MOCK_ASSESSMENT_Q12_Q30.md)** *(Officially Grounded Answer Key + Curriculum Gap Map)*
 - 🏛️ **[Master 5-Day Technical Synthesis](MASTER_SYNTHESIS.md)** *(End-to-End Architectural Narrative)*
 - 🧭 **[Google Cloud CE & DBCE Decision Playbook](CE_PLAYBOOK.md)** *(Customer Scenario Decision Matrices)*
 - 💻 **[CLI & Python SDK Cheat Sheet](CLI_AND_SDK_CHEATSHEET.md)** *(Copy-Paste Commands & Code Recipes)*
