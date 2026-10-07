@@ -477,7 +477,7 @@ Given a meaningful per-token cost gap between Gemini's Pro and Flash-Lite tiers,
 
 | Claim Previously in the Repository | Grounded Fact (2026-10-07) | Files Corrected |
 | :--- | :--- | :--- |
-| Context caching minimum is "typically `>= 32k` tokens" | Model-specific: `2,048` (Gemini 2.5) / `4,096` (Gemini 3.x) on the Gemini API; up to `6,144` for some 3.x Flash models on Agent Platform | [STUDY_GUIDE.md](STUDY_GUIDE.md), [PRACTICE_EXAM_50Q.md](PRACTICE_EXAM_50Q.md) (Q51, Q52), [gemini_context_caching_implicit_vs_explicit.md](../Notes/Day_5/gemini_context_caching_implicit_vs_explicit.md) |
+| Context caching minimum is "typically `>= 32k` tokens" | Model-specific: `2,048` (Gemini 2.5) / `4,096` (Gemini 3.x) on the Gemini API; up to `6,144` for some 3.x Flash models on Agent Platform | [STUDY_GUIDE.md](STUDY_GUIDE.md), [PRACTICE_EXAM_50Q.md](PRACTICE_EXAM_50Q.md) (Q51, Q52), [CE_PLAYBOOK.md](CE_PLAYBOOK.md), [MASTER_SYNTHESIS.md](MASTER_SYNTHESIS.md), [gemini_context_caching_implicit_vs_explicit.md](../Notes/Day_5/gemini_context_caching_implicit_vs_explicit.md) |
 | `0.8` / `0.5` described as the "default" / "standard" `adk eval` thresholds, and `1.0` described as "impossible" | ADK built-in defaults are `tool_trajectory_avg_score: 1.0` (`EXACT`) and `response_match_score: 0.8`; `0.8` / `0.5` is the curriculum's recommended, explicitly configured bar | [STUDY_GUIDE.md](STUDY_GUIDE.md), [PRACTICE_EXAM_50Q.md](PRACTICE_EXAM_50Q.md) (Q9) |
 
 ---

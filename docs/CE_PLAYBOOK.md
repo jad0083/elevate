@@ -62,4 +62,4 @@ Sources: [foundation_model_consumption_options.md](../Notes/Day_5/foundation_mod
     - **Stage 2 (`~5ms`)**: Semantic Vector Router (`cosine >= 0.82`) dispatching to **Flash-Lite** (`$`), **Flash** (`$$`), or **Pro** (`$$$$`).
     - **Stage 3 (`500ms+`)**: Flash-Lite LLM disambiguation fallback + automatic self-repair escalation to **Gemini Pro** on schema/validation failure.
 4. **Enforce 90% Context Caching**:
-    - Structure all prompts **Static-First** (`[System Prompt + Tool Schemas + Reference Docs]` $\rightarrow$ `[Dynamic Turn]`) to get automatic **90% Implicit Caching** ($\ge 32\text{k}$ tokens), and use **Explicit `CachedContent` (`ttl="3600s"`)** for multi-user shared repositories/manuals.
+    - Structure all prompts **Static-First** (`[System Prompt + Tool Schemas + Reference Docs]` $\rightarrow$ `[Dynamic Turn]`) to get automatic **90% Implicit Caching** (above a model-specific minimum, e.g. `2,048`–`4,096` tokens), and use **Explicit `CachedContent` (`ttl="3600s"`)** for multi-user shared repositories/manuals.

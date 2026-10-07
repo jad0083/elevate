@@ -111,6 +111,6 @@ print(response.text)
 | **Setup Required** | **Zero Setup (Enabled by default)** | Programmatic (`CachedContent` API) |
 | **Cost Savings** | **90% Discount** on cached tokens | **90% Discount** (2.5+) / 75% (2.0) |
 | **Lifecycle Management**| Managed automatically by Google serving infra | Explicit TTL (Default: **60 min**, refreshable) |
-| **Minimum Token Threshold**| Typically $\ge 32\text{k}$ tokens | Typically $\ge 32\text{k}$ tokens |
+| **Minimum Token Threshold**| Model-specific: `2,048` (Gemini 2.5) / `4,096` (Gemini 3.x) on the Gemini API; up to `6,144` for some 3.x Flash models on Agent Platform | Model-specific: `2,048` (Gemini 2.x) / `4,096` (Gemini 3.x) |
 | **Persistence Guarantee** | Best-effort temporal cache | **Guaranteed SLA** for duration of TTL |
 | **Best Used When...** | Sequential agent turns with static prefixes | High-concurrency multi-user shared docs |

@@ -195,7 +195,7 @@ Full Index: [Notes/Day_5/README.md](../Notes/Day_5/README.md) (`5` Topic Notes Â
 
 ### B. Gemini Context Caching: Implicit vs. Explicit
 - **90% Token Savings** ([gemini_context_caching_implicit_vs_explicit.md](../Notes/Day_5/gemini_context_caching_implicit_vs_explicit.md)):
-    - **Implicit Caching**: Zero setup (enabled by default), **90% discount** on matching prefixes $\ge 32\text{k}$ tokens. Requires **Static-First Prompt Ordering**: `[System Instructions + Tool Schemas + Reference Docs]` $\rightarrow$ `[Dynamic User Query / Latest Tool Output]`.
+    - **Implicit Caching**: Zero setup (enabled by default), **90% discount** on matching prefixes above a model-specific minimum (`2,048` Gemini 2.5 / `4,096` Gemini 3.x on the Gemini API). Requires **Static-First Prompt Ordering**: `[System Instructions + Tool Schemas + Reference Docs]` $\rightarrow$ `[Dynamic User Query / Latest Tool Output]`.
     - **Explicit Caching (`CachedContent` API)**: Declarative handle (`cached_content=cache.name`) with guaranteed persistence SLA (**60-minute default TTL**, **90% discount on Gemini 2.5+**) for multi-user portals querying shared corpora.
 
 ### C. 3-Stage Cascading Hybrid Model Router

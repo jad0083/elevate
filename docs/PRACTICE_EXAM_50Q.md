@@ -92,7 +92,7 @@ An engineering team needs to execute three independent data-enrichment lookups (
 - **D)** Three `SequentialAgent` instances chained via raw regex scraping of chat history strings.
 
 #### Question 9: ADK Evaluation — Catching "Lucky Hallucinations" & Baseline Thresholds
-During testing, a customer service agent correctly tells a user *"Your refund for order #8821 has been processed,"* passing a text-similarity check. However, inspecting the logs reveals the agent never actually called `check_order_status` or `process_refund`—it simply guessed a polite affirmative response. How does **ADK Eval** catch this **Lucky Hallucination**, and what are the standard baseline thresholds in `test_config.json`?
+During testing, a customer service agent correctly tells a user *"Your refund for order #8821 has been processed,"* passing a text-similarity check. However, inspecting the logs reveals the agent never actually called `check_order_status` or `process_refund`—it simply guessed a polite affirmative response. How does **ADK Eval** catch this **Lucky Hallucination**, and what baseline thresholds does the curriculum recommend configuring in `test_config.json`?
 
 - **A)** ADK Eval only grades output string length; the baseline threshold is `response_length >= 500`.
 - **B)** ADK Eval grades the **Golden Dataset 3-Tuple** (`Query -> Trajectory [Tool Calls + Args] -> Final Response`) against `session.events`, enforcing baseline thresholds of **`"tool_trajectory_avg_score": 0.8`** (80% tool sequence/argument match) and **`"response_match_score": 0.5`** (50% semantic/ROUGE response match).
@@ -471,7 +471,7 @@ Compare **Gemini Implicit Caching** and **Gemini Explicit Caching (`CachedConten
 
 - **A)** Implicit Caching requires manual API calls and offers a 10% discount; Explicit Caching is enabled by default with a 5-second TTL.
 - **B)** Both Implicit and Explicit Caching require a minimum of 1,000,000 tokens and charge a 200% premium on cached tokens.
-- **C)** **Implicit Caching** requires **zero setup (enabled by default)**, delivers a **90% token discount** on matching prompt prefixes (typically **$\ge 32\text{k}$ tokens**) using a best-effort temporal rolling window (full prompt sent over the wire, infra reuses pre-computed KV-cache activations); **Explicit Caching** uses the declarative **`CachedContent` API** (`client.cached_contents.create`), delivers a **90% discount on Gemini 2.5+** (**75% on Gemini 2.0**) with a **guaranteed persistence SLA** (**60-minute default TTL**, `ttl="3600s"`), and uploads the raw corpus once so subsequent calls pass only the lightweight **`cached_content=cache.name`** pointer.
+- **C)** **Implicit Caching** requires **zero setup (enabled by default)**, delivers a **90% token discount** on matching prompt prefixes above a **model-specific minimum** (e.g. **`2,048`** tokens for Gemini 2.5, **`4,096`** for Gemini 3.x on the Gemini API) using a best-effort temporal rolling window (full prompt sent over the wire, infra reuses pre-computed KV-cache activations); **Explicit Caching** uses the declarative **`CachedContent` API** (`client.cached_contents.create`), delivers a **90% discount on Gemini 2.5+** (**75% on Gemini 2.0**) with a **guaranteed persistence SLA** (**60-minute default TTL**, `ttl="3600s"`), and uploads the raw corpus once so subsequent calls pass only the lightweight **`cached_content=cache.name`** pointer.
 - **D)** Explicit Caching deletes the cache after every single request and cannot be shared across multiple concurrent users.
 
 #### Question 52: Why Implicit Context Caching Misses — The Dynamic-First Prefix Anti-Pattern
@@ -538,7 +538,7 @@ Use this rapid-grading table to score your practice run before reviewing the det
 | **Q20** | **A** | Day 2 — Trust Gap (`29%` Trust, `66%` Almost Right) & Vibe Coding | **Q48** | **D** | Day 4 — MCP Toolbox for DBs & Vector DB Matrix (`<5ms` vs `5–25ms` vs `200ms–3s`) |
 | **Q21** | **D** | Day 2 — Context Equation ($C=P+M$), 4 Partitions & Dual Hazards | **Q49** | **B** | Day 5 — 5 Vertex AI Consumption Tiers (PT, Standard, Priority, Flex, Batch) |
 | **Q22** | **B** | Day 2 — Virtual MCP Toolsets (`1k–4k`) & Subagent 3-Part Contract | **Q50** | **A** | Day 5 — Right-Sizing PT (`80–85%` Utilization) + PayGo Spillover |
-| **Q23** | **A** | Day 2 — SDD 4-File Matrix (`README`, `AGENTS`, `SPEC`, `SKILL`) | **Q51** | **C** | Day 5 — Implicit vs. Explicit Context Caching (`90%` off, `>=32k`, `3600s` TTL) |
+| **Q23** | **A** | Day 2 — SDD 4-File Matrix (`README`, `AGENTS`, `SPEC`, `SKILL`) | **Q51** | **C** | Day 5 — Implicit vs. Explicit Context Caching (`90%` off, model-specific min tokens, `3600s` TTL) |
 | **Q24** | **C** | Day 2 — 4-Stage AI Mainframe Modernization & Google Dual Run | **Q52** | **D** | Day 5 — Static-First Prompt Ordering for Implicit Prefix Caching |
 | **Q25** | **D** | Day 2 — `.NET 8` `CodMod` (`<2 Mo`) & DMS + Gemini to AlloyDB (`99.99%`) | **Q53** | **A** | Day 5 — Explicit `CachedContent` Python SDK (`cached_content=cache.name`) |
 | **Q26** | **B** | Day 2 — MCP $O(N \times M) \to O(N + M)$ & 3 Primitives (`Tools`, `Prompts`, `Resources`) | **Q54** | **B** | Day 5 — Smallest-Model-First Spectrum (Flash-Lite, Flash, Pro TTFT/Cost) |
@@ -610,8 +610,8 @@ Use this rapid-grading table to score your practice run before reviewing the det
 #### Q9 — ADK Evaluation — Catching "Lucky Hallucinations" & Baseline Thresholds
 - **Correct Answer**: **B**
 - **Why It Is Correct & Why Distractors Fail**:
-  - Grading only final text responses fails to catch **Lucky Hallucinations** (where an agent guesses a plausible answer without invoking required tools). **ADK Eval** validates the **Golden Dataset 3-Tuple** (`Query -> Trajectory [Tool Calls + Args] -> Final Response`) against `session.events`, using standard baseline gates in `test_config.json` of **`"tool_trajectory_avg_score": 0.8`** and **`"response_match_score": 0.5`**.
-  - *Distractor A* measures only length. *Distractor C* sets an impossible `1.0` exact-string requirement while ignoring tool execution (`0.0`). *Distractor D* abandons automated CI/CD evaluation (`uv run adk eval` / `pytest`).
+  - Grading only final text responses fails to catch **Lucky Hallucinations** (where an agent guesses a plausible answer without invoking required tools). **ADK Eval** validates the **Golden Dataset 3-Tuple** (`Query -> Trajectory [Tool Calls + Args] -> Final Response`) against `session.events`, using the curriculum-recommended gates in `test_config.json` of **`"tool_trajectory_avg_score": 0.8`** and **`"response_match_score": 0.5`**. Without a `test_config.json`, ADK applies stricter built-in defaults: **`tool_trajectory_avg_score` `1.0` with `EXACT` trajectory matching** and **`response_match_score` `0.8`**.
+  - *Distractor A* measures only length. *Distractor C* demands an exact-string response match (`1.0`) while switching off trajectory checking (`0.0`), so a perfectly worded Lucky Hallucination would still pass. *Distractor D* abandons automated CI/CD evaluation (`uv run adk eval` / `pytest`).
 - **Curriculum Source Links**: [trajectory_vs_response.md](../Notes/Day_1/trajectory_vs_response.md), [the_golden_dataset.md](../Notes/Day_1/the_golden_dataset.md), [setting_the_bar.md](../Notes/Day_1/setting_the_bar.md), [adk_run_evaluation.md](../Notes/Day_1/adk_run_evaluation.md)
 
 #### Q10 — Cloud Deployment Targets & The Ephemeral Container State Trap
@@ -922,7 +922,7 @@ Use this rapid-grading table to score your practice run before reviewing the det
 #### Q51 — Gemini Context Caching — Implicit vs. Explicit Comparison Matrix
 - **Correct Answer**: **C**
 - **Why It Is Correct & Why Distractors Fail**:
-  - **Implicit Caching** requires **zero setup (enabled by default)** and provides a **90% token discount** on matching prefixes ($\ge 32\text{k}$ tokens) over a best-effort rolling temporal window (full prompt sent over wire, KV-cache reused). **Explicit Caching (`CachedContent` API)** is declarative (`client.cached_contents.create`), provides a **90% discount on Gemini 2.5+** (**75% on Gemini 2.0**) with a **guaranteed persistence SLA** (**60-minute default TTL**, `ttl="3600s"`), and uploads the corpus once so subsequent calls pass only `cached_content=cache.name`.
+  - **Implicit Caching** requires **zero setup (enabled by default)** and provides a **90% token discount** on matching prefixes above a model-specific minimum (`2,048` Gemini 2.5 / `4,096` Gemini 3.x on the Gemini API) over a best-effort rolling temporal window (full prompt sent over wire, KV-cache reused). **Explicit Caching (`CachedContent` API)** is declarative (`client.cached_contents.create`), provides a **90% discount on Gemini 2.5+** (**75% on Gemini 2.0**) with a **guaranteed persistence SLA** (**60-minute default TTL**, `ttl="3600s"`), and uploads the corpus once so subsequent calls pass only `cached_content=cache.name`.
   - *Distractors A, B, and D* invert setup, discount, threshold, and TTL properties.
 - **Curriculum Source Links**: [gemini_context_caching_implicit_vs_explicit.md](../Notes/Day_5/gemini_context_caching_implicit_vs_explicit.md)
 
@@ -930,7 +930,7 @@ Use this rapid-grading table to score your practice run before reviewing the det
 - **Correct Answer**: **D**
 - **Why It Is Correct & Why Distractors Fail**:
   - Transformer KV-cache reuse depends on an **exact token prefix match** starting at index 0. Injecting a changing timestamp, UUID, or dynamic user query at the very start of the prompt invalidates every token that follows, yielding a `0%` cache hit rate. Engineers must enforce **Static-First Prompt Ordering**: `[System Instructions + Tool Schemas + Reference Docs]` $\rightarrow$ `[Dynamic Conversation History + Latest User Query / Tool Output]`.
-  - *Distractors A, B, and C* misstate prefix-matching mechanics and minimum token thresholds ($\ge 32\text{k}$).
+  - *Distractors A, B, and C* misstate prefix-matching mechanics and minimum token thresholds (model-specific, e.g. `2,048`–`4,096`).
 - **Curriculum Source Links**: [gemini_context_caching_implicit_vs_explicit.md](../Notes/Day_5/gemini_context_caching_implicit_vs_explicit.md)
 
 #### Q53 — Explicit Context Caching — `google.genai` Python SDK Implementation
