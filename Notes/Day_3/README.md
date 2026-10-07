@@ -48,6 +48,7 @@ Day 3 focuses on the **Unified Defensive Framework for the Age of Agentic AI**, 
 ---
 
 ## Daily Navigation
+* [Repository Root Hub](../../README.md)
 * [Master Elevate Curriculum](../README.md)
 * [Day 1 Notes](../Day_1/README.md)
 * [Day 2 Notes](../Day_2/README.md)

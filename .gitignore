@@ -1,0 +1,16 @@
+# OS & Editor metadata
+.DS_Store
+Thumbs.db
+*~
+.vscode/
+.idea/
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/

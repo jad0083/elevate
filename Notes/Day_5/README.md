@@ -21,6 +21,7 @@ Welcome to **Day 5** of the Elevate Agent Engineering Curriculum. Day 5 represen
 ---
 
 ## Daily Navigation
+* [Repository Root Hub](../../README.md)
 * [Master Elevate Curriculum](../README.md)
 * [Day 1 Notes: Foundations & Google ADK (107 Notes)](../Day_1/README.md)
 * [Day 2 Notes: Antigravity, Rigor, Modernization & AI Security (88 Notes)](../Day_2/README.md)

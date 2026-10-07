@@ -110,6 +110,9 @@ Day 2 focuses on **Google Antigravity**, its unified agent harness co-optimized 
 ---
 
 ## Daily Navigation
+* [Repository Root Hub](../../README.md)
 * [Master Elevate Curriculum](../README.md)
 * [Day 1 Notes](../Day_1/README.md)
 * [Day 3 Notes](../Day_3/README.md)
+* [Day 4 Notes](../Day_4/README.md)
+* [Day 5 Notes](../Day_5/README.md)

@@ -36,3 +36,12 @@ flowchart LR
 * **[Day 3 Master Index (25 Notes)](Day_3/README.md)**: Unified defensive framework for agentic AI, machine-speed AppSec, state-sponsored AI actors, Shift-Left / Shift-Right closed loop, 5-phase Wiz attack surface assessment funnel, and CodeMender autonomous patching.
 * **[Day 4 Master Index (32 Notes)](Day_4/README.md)**: Google ADK 2.0 graph engine, cognitive memory hierarchy, A2A open protocol, SPIFFE Dual-Gate identity, the 7 evaluation dimensions, 8 evaluation methodologies, Harness Engineering, MCP Toolbox for Databases, and Vector DB topologies.
 * **[Day 5 Master Index (Active)](Day_5/README.md)**: Active session notes, architectures, code artifacts, and deep dives for Day 5.
+
+---
+
+## Cross-Curriculum Playbooks & Repository Navigation
+
+* **[Repository Root Hub (`README.md`)](../README.md)**
+* **[Master 5-Day Technical Synthesis](../docs/MASTER_SYNTHESIS.md)**
+* **[Google Cloud CE & DBCE Decision Playbook](../docs/CE_PLAYBOOK.md)**
+* **[CLI & Python SDK Quick-Reference Cheat Sheet](../docs/CLI_AND_SDK_CHEATSHEET.md)**

@@ -41,7 +41,9 @@ Day 4 focuses on **Google ADK 2.0**, exploring the paradigm shift to graph-based
 * [Google MCP Toolbox for Databases: Open Source Enterprise MCP Gateway](mcp_toolbox_for_databases_overview.md): Deep dive into Google's open-source database gateway (`go/mcp-toolbox`), connecting agents to AlloyDB, BigQuery, Spanner, Cloud SQL, and open-source engines with connection pooling, IAM auth, and OTEL observability.
 
 ### 4. Human-in-the-Loop (HITL) & State Checkpointing
-*(Notes will populate here as sessions progress)*
+* [Native `interrupt()` / `resume()` & `CloudFirestoreCheckpointer` in ADK 2.0](adk_2_paradigm_shift_graph_execution_engine.md): Deterministic graph execution pausing, state persistence across restarts, and human approval resumption.
+* [`A2A_INTERRUPT_REQUIRED` & Cross-Agent HITL Escalation](a2a_open_protocol_agent_to_agent_interoperability.md): Propagating human-in-the-loop task interrupts across remote A2A servers and client surfaces.
+* [Cross-Device Session Checkpointing (`FirestoreSessionService`)](scenario_1_multiturn_conversation_continuity_state_persistence.md): Sub-10ms session hydration and state continuity across stateless Cloud Run instances.
 
 ### 5. Production Enterprise Systems & Cloud Deployment
 * [Agent Platform Runtime: Registry, SPIFFE Identity & OTEL Observability](agent_platform_runtime_master_architecture.md): The master enterprise runtime architecture uniting Agent Registry (top control plane), SPIFFE-based Agent Identity with Dual-Gate Auth Manager (center execution plane), and OTEL-native distributed tracing (bottom data plane).
@@ -53,6 +55,7 @@ Day 4 focuses on **Google ADK 2.0**, exploring the paradigm shift to graph-based
 ---
 
 ## Daily Navigation
+* [Repository Root Hub](../../README.md)
 * [Master Elevate Curriculum](../README.md)
 * [Day 1 Notes](../Day_1/README.md)
 * [Day 2 Notes](../Day_2/README.md)

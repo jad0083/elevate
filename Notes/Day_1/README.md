@@ -190,3 +190,13 @@ graph TD
   * [ADK Deployment: The Other Two Axes (Cold Start & Billing)](the_other_two_axes_cold_start_and_billing.md): Sub-second cold starts vs scale-to-zero economics in Agent Runtime vs Cloud Run.
   * [Google ADK: The Agent Doesn't Change (Same Code, Any Target)](the_agent_doesnt_change.md): Decoupling pure Python business logic from hosting infrastructure.
   * [Google ADK: One Command Per Target (CLI Deployments)](one_command_per_target.md): Streamlined deployment commands for Agent Runtime, Cloud Run, and agents-cli CI/CD pipelines.
+
+---
+
+## Daily Navigation
+* [Repository Root Hub](../../README.md)
+* [Master Elevate Curriculum](../README.md)
+* [Day 2 Notes](../Day_2/README.md)
+* [Day 3 Notes](../Day_3/README.md)
+* [Day 4 Notes](../Day_4/README.md)
+* [Day 5 Notes](../Day_5/README.md)
